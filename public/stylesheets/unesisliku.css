@@ -1,0 +1,33 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: darkslategray !important;
+    color: black !important;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+
+    margin: 10px;
+    font-family: 'Dekko';;
+}
+
+
+.glavni {
+    background: lightslategray;
+    padding: 10px;
+    border: 1px solid;
+    box-shadow: 5px 5px darkslategray;
+}
+
+
+
+
+

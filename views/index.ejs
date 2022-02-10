@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEB SHOP</title>
+    <link rel='stylesheet' href='../stylesheets/pocetna.css'/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+
+
+    </style>
+
+</head>
+<body>
+<div class="container glavni">
+    <div class="row ">
+        <div class="col-sm-4 "></div>
+        <div class="col-sm-4 naslov "><h3>Dobro došli na web shop !</h3></div>
+        <div class="col-sm-4 "></div>
+    </div>
+</div>
+<div class="container glavni">
+    <div class="row ">
+        <div class="col-sm-4 "></div>
+        <div class="col-sm-4"><h3>Registrujte se kao :</h3></div>
+        <div class="col-sm-4"></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-6 regtrg">
+            <figure>
+                <img src="../images/shop-icon.png" class="slika img-fluid">
+                <figcaption>
+                    <button onclick="window.location.href='/registertrg'" class="btn btn-dark">Trgovac</button>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-6 regkup">
+            <figure class="kup figure">
+                <img src="../images/buyer.png" class="slika img-fluid">
+                <figcaption>
+                    <button onclick="window.location.href='/registerkup'" class="btn btn-dark">Kupac</button>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <hr class="linija">
+
+
+    <br>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 log"><h3>Ako ste već registrovani logujte se: </h3>
+            <br>
+            <button class="btn btn-dark" onclick="window.location.href='/login'">Login</button>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+</body>
+</html>

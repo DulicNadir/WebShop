@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEB SHOP</title>
+    <link rel='stylesheet' href='/stylesheets/pogledaj.css'/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        function posalji(ime) {
+            $.ajax({
+                method: "POST",
+                url: "/admin/korisnici" + "/" + ime,
+                data: {}
+            });
+        }
+    </script>
+</head>
+<body>
+
+<h3>Dobro došli u <%= sve[0].ime %></h3>
+<ul>
+
+    <li>Broj telefona : <%= sve[0].telefon %></li>
+    <li>Email : <%= sve[0].email %></li>
+    <li>Adresa : <%= sve[0].adresa %></li>
+    <li>Grad : <%= sve[0].grad %></li>
+</ul>
+
+<table class="table table-dark">
+    <th>Artikal</th>
+    <th>Kolicina</th>
+    <th>Kategorija</th>
+    <% for(let i = 0;i < sve.length;i++){ %>
+
+    <tr>
+        <td>
+            <%= sve[i].artikal %>
+        </td>
+        <td>
+            <%= sve[i].kolicina %>
+        </td>
+        <td>
+            <%= sve[i].kategorija %>
+        </td>
+    </tr>
+    <% } %>
+</table>
+<form class="form" method="post" action="/admin/korisnici/<%= sve[0].ime %>">
+    <label class="form-group">
+        Poruka:
+    </label>
+    <br>
+    <textarea class="form-control" name="poruka"></textarea>
+    <br>
+    <button type="submit" class="btn btn-primary" onclick="posalji(<%= sve[0].ime %>)">Posalji</button>
+
+</form>
+</body>
+</html>

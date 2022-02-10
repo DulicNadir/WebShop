@@ -1,0 +1,79 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: darkslategray !important;
+    color: white !important;
+}
+
+.mjestoart {
+    text-align: center;
+
+    border-radius: 80px;
+
+
+}
+
+.hide {
+    display: none;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.btn {
+
+    font-family: 'Merienda';
+
+}
+
+.container {
+    border-radius: 20px;
+    margin: 10px;
+    font-family: 'Dekko';
+    font-size: 1.1rem;;
+}
+
+
+.glavni {
+    background-color: lightgray;
+    padding: 10px;
+    border: 1px solid;
+    box-shadow: 5px 5px darkslategray;
+}
+
+
+h2 {
+    font-size: 2rem !important;
+    text-align: center;
+}
+
+.linija {
+    width: 80%;
+    border: 1px solid darkslategray;
+}
+
+.selekt {
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+option:hover {
+    background-color: darkslategray;
+    color: white;
+}
+
+option:active {
+    background-color: darkred;
+}
+
+p {
+    font-style: italic;
+
+}
+
+
+
+
+

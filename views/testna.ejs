@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form method="POST" action="/testna" enctype="multipart/form-data">
+
+    <h2>Unesi fajl</h2>
+    <input type="file" name="sampleFile" accept="image/*">
+
+    <input type="submit">
+</form>
+<br><br>
+<div class="card" style="border:3px solid black">
+    <% for(let i = 0;i < nesto.length;i++){ %>
+        <% if(nesto[0].slika === 'a'){ %>
+            <img src="/images/defaultuser.jpg" alt="slikausera">
+        <% } else{ %>
+        <img src="./images/<%= nesto[0].slika %>" alt="slikausera1">
+        <% } %>
+
+        <h1 class="ime"><%= nesto[0].ime %></h1>
+        <div class="prezime"><%= nesto[0].prezime %></div>
+    <% } %>
+
+</div>
+</body>
+</html>

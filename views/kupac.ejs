@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEB SHOP</title>
+    <link rel='stylesheet' href='../stylesheets/kupac1.css'/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="header">
+    <form method="post" action="/pretraga">
+        <input type="text" name="trazi" value="" class="form-control">
+        <button type="submit" class="btn btn-dark">Trazi</button>
+    </form>
+    <div class="header-right">
+        <a class="active" onclick="window.location.href='/profilkupca'">Profil</a>
+        <a onclick="window.location.href='/kupac/pricaj/chat'">Chat</a>
+        <a onclick="window.location.href='/kupac/profil/korpa'">Korpa</a>
+        <a onclick="window.location.href='/logoutkupca'">Logout</a>
+
+    </div>
+</div>
+<div class="container">
+    <h2>Dobrodošli, na WebShop ! Izaberite iz naše bogate ponude.</h2>
+
+    <form method="get" action="/kupac/sortiraj">
+        <select name="sortiraj">
+            <option name="artikal" value="artikal">Naziv</option>
+            <option name="cijena" value="cijena">Cijena</option>
+            <option name="kategorija" value="kategorija">Kategorija</option>
+        </select>
+        <button type="submit" class="btn">Sortiraj</button>
+    </form>
+</div>
+<div class="container-fluid artikli">
+    <div class="row">
+        <% for(let i = 0;i < sve.length;i++){ %>
+        <div class="col-sm-6 col-md-3 mjestoart">
+            <div class="proba">
+                <figure class="figure">
+                    <img src="/images/<%= sve[i].slika %>" class="slikart img-fluid"><br>
+                    <div class="opis">
+                        <p id="<%= sve[i].id %>" onclick="window.location.href='/artikal/'+this.id">Naziv
+                            artikla: <%= sve[i].artikal %></p>
+                        <p>Kategorija: <%= sve[i].kategorija %></p>
+                        <p>Cijena: <%= sve[i].cijena %> KM</p>
+                        <a href="/kupac/<%= sve[i].trgovac %>"><%= sve[i].trgovac %></a>
+                    </div>
+                </figure>
+                <br>
+
+            </div>
+
+        </div>
+        <% } %>
+
+    </div>
+</div>
+<hr>
+<div class="container-fluid artikli">
+    <div class="row">
+        <% for(let i = 0;i < rand.length;i++){ %>
+        <div class="col-sm-6 col-md-3 mjestoart">
+            <div class="proba">
+                <figure class="figure">
+                    <img src="/images/<%= rand[i].slika %>" class="slikart img-fluid"><br>
+                    <div class="opis">
+                        <p id="<%= rand[i].id %>" onclick="window.location.href='/artikal/'+this.id">Naziv
+                            artikla: <%= rand[i].artikal %></p>
+                        <p>Kategorija: <%= rand[i].kategorija %></p>
+                        <p>Cijena: <%= rand[i].cijena %> KM</p>
+                        <a href="/kupac/<%= rand[i].trgovac %>"><%= rand[i].trgovac %></a>
+                    </div>
+                </figure>
+                <br>
+
+            </div>
+
+        </div>
+
+        <% } %>
+
+    </div>
+</div>
+
+</body>
+</html>

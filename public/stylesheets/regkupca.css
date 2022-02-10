@@ -1,0 +1,90 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: darkslategray !important;
+    color: black !important;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.btn {
+    margin: 5px;
+    font-family: 'Merienda';
+
+}
+
+.container {
+    border-radius: 20px;
+    margin: 10px;
+    font-family: 'Dekko';;
+}
+
+
+.glavni {
+    background-color: lightgray;
+    padding: 10px;
+    border: 1px solid;
+    box-shadow: 5px 5px darkslategray;
+}
+
+h2 {
+    font-size: 2rem !important;
+    text-align: center;
+}
+
+.linija {
+    width: 80%;
+    border: 1px solid darkslategray;
+}
+
+.selekt {
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+option:hover {
+    background-color: darkslategray;
+    color: white;
+}
+
+option:active {
+    background-color: darkred;
+}
+
+p {
+    font-style: italic;
+
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    margin-top: 25%;
+    border: 2px solid black !important;
+    border-radius: 50%;
+}
+
+.desno {
+    text-align: center;
+
+}
+
+.hide {
+    display: none;
+}
+
+.slikart1 {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.table td {
+    vertical-align: middle !important;
+
+}
+
+

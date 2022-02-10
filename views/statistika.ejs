@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEB SHOP</title>
+    <link rel='stylesheet' href='/stylesheets/statistika.css'/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <style>
+        .linija {
+            border: 1px solid black;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <table class="table">
+                <th>Broj korisnika</th>
+                <th>Broj trgovaca</th>
+                <th>Broj kupaca</th>
+                <th>Ukupan broj artikala</th>
+                <tr>
+                    <td>
+                        <% let i = parseInt(brtrgovaca[0].count)
+                        let j = parseInt(brkupaca[0].count)
+                        let b = i + j %>
+                        <%= b %>
+                    </td>
+                    <td>
+                        <%= brtrgovaca[0].count %>
+                    </td>
+                    <td>
+                        <%= brkupaca[0].count %>
+                    </td>
+                    <td>
+                        <%= brartikala[0].count %>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-6 graf">
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <table>
+                <th>Broj artikala tipa "Roba"</th>
+                <th>Broj artikala tipa "Usluga"</th>
+
+                <tr>
+                    <td>
+                        <%= statGr[0].broj %>
+                    </td>
+                    <td>
+                        <%= statGr[1].broj %>
+                    </td>
+
+
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-6 graf">
+            <canvas id="graf2" style="width:100%;max-width:700px"></canvas>
+
+        </div>
+
+    </div>
+
+    <button onclick="window.location.href='/admin'" class="btn btn-dark">Povratak na pregled</button>
+</div>
+
+<script>
+    var myChart = new Chart("myChart", {
+        type: "bar",
+        data: {},
+        options: {}
+    });
+    <% let x = parseInt(brtrgovaca[0].count)
+    let y = parseInt(brkupaca[0].count)
+    let z = x + y %>
+
+    var xValues = ["Broj korisnika", "Broj trgovaca", "Broj kupaca", "Broj artikala"];
+    var yValues = [<%= z %>, <%= brtrgovaca[0].count %>, <%= brkupaca[0].count %>, <%= brartikala[0].count %>];
+    var barColors = ["red", "green", "blue", "orange"];
+
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        stepSize: 1
+                    }
+                }]
+            },
+            title: {
+                display: true,
+                text: "Tip artikla"
+            },
+            legend: {display: false}
+        }
+    });
+</script>
+<script>
+    var myChart = new Chart("graf2", {
+        type: "bar",
+        data: {},
+        options: {}
+    });
+
+    <% let x1 = parseInt(statGr[0].broj);
+    let y1 = parseInt(statGr[1].broj)
+    let z1 = x1 + y1 %>
+
+    var xValues = ["Artikli iz kategorije robe", "Artikli iz kategorije usluga"];
+    var yValues = [<%= x1 %>, <%= y1 %>];
+    var barColors = ["red", "green"];
+
+    new Chart("graf2", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        stepSize: 1
+                    }
+                }]
+            },
+            title: {
+                display: true,
+                text: "Statistika"
+            },
+            legend: {display: false}
+        }
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-image: url("http://www.saurabhkarwal.com/wp-content/uploads/2018/03/Background-opera-speeddials-community-web-simple-backgrounds.jpg");
+}
+
+a {
+    color: #00B7FF;
+}
+
+.glavni {
+    background-color: lightgray;
+    padding: 10px;
+    border: 1px solid;
+    box-shadow: 5px 5px darkslategray;
+}
